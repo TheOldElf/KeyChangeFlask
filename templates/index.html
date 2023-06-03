@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поиск и замена данных</title>
+</head>
+<body>
+    <h1>Поиск и замена данных</h1>
+    <form method="post">
+        <label for="search_key">Ключ:</label>
+        <input type="text" id="search_key" name="search_key" required>
+        <label for="replace_value">Заменить на:</label>
+        <input type="text" id="replace_value" name="replace_value" required>
+        <button type="submit">Искать и заменять</button>
+    </form>
+    
+    <h2>Результаты:</h2>
+    <table>
+        <tr>
+            <th>Ключ</th>
+            <th>Значение</th>
+        </tr>
+        {% for key, value in data.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
